@@ -25,7 +25,7 @@ Once Pyper reaches the early stages of Beta, we plan to do a Beta Release. The r
 We did not intend to make a replacement for them, but if this project outperforms others, then it can be one :)
 
 ### What makes Pyper so different?
-That is a surprise for now.
+It doesn't just compile, it also optimizes it. Contrary to standard compiler, it doesn't just optimize LVM 
 
 ### How to contribute to this project? / How to contact for more questions?
 Contact at mrmouse2405@gmail.com
