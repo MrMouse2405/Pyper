@@ -43,33 +43,6 @@ from PyperFramework.Phases.Phase_2_SRC_To_AST import Phase2SRCToAST
 
 """
 
-
-def initialize(*args: PyperThread) -> list:
-    thread_pool = []
-    length = len(args) - 1
-
-    for x in args:
-        thread_pool.append(x)
-
-    # Now connecting threads, Note, this is not a bitwise shift, we are using magic methods to look simple
-    # A >> B means A's next is B, and A << B means A's last is B
-
-    for x in range(length + 1):
-        if x == 0:
-            thread_pool[0].connect_next(thread_pool[1])
-            thread_pool[1].connect_last(thread_pool[0])
-        elif x == length:
-            thread_pool[length].connect_last(thread_pool[length-1])
-            thread_pool[length-1].connect_next(thread_pool[length])
-        else:
-            thread_pool[x - 1].connect_next(thread_pool[x])
-            thread_pool[x].connect_last(thread_pool[x - 1])
-            thread_pool[x].connect_next(thread_pool[x + 1])
-            thread_pool[x + 1].connect_last(thread_pool[x])
-
-    return thread_pool
-
-
 class PyperPipeLine:
 
     def __init__(self, python_file):
@@ -80,10 +53,41 @@ class PyperPipeLine:
             Phase1FileReader(self._Phase1Queue, python_file),
             Phase2SRCToAST(self._Phase1Queue, self._Phase2Queue))
 
-
         for x in self.thread_pool:
             x.start()
 
         for x in self.thread_pool:
             x.join()
 
+
+"""
+    initialize(*args : PyperThread) -> list
+    
+    This function is basically used for storing initialized threads
+    and connecting them to each other in the pipeline.
+
+"""
+
+
+def initialize(*args: PyperThread) -> list:
+    thread_pool = []
+    length = len(args) - 1
+
+    for x in args:
+        thread_pool.append(x)
+
+    # Now connecting them
+    for x in range(length + 1):
+        if x == 0:
+            thread_pool[0].connect_next(thread_pool[1])
+            thread_pool[1].connect_last(thread_pool[0])
+        elif x == length:
+            thread_pool[length].connect_last(thread_pool[length - 1])
+            thread_pool[length - 1].connect_next(thread_pool[length])
+        else:
+            thread_pool[x - 1].connect_next(thread_pool[x])
+            thread_pool[x].connect_last(thread_pool[x - 1])
+            thread_pool[x].connect_next(thread_pool[x + 1])
+            thread_pool[x + 1].connect_last(thread_pool[x])
+
+    return thread_pool

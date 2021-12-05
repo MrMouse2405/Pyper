@@ -74,4 +74,4 @@ class Phase1FileReader(PyperThread):
     """
 
     def on_terminated(self):
-        self.deposit_queue.clear()
+        self.deposit_queue.empty()
