@@ -16,7 +16,7 @@ class Phase1FileReader(PyperThread):
 
     def __init__(self, deposit_queue: Queue, path_to_file_for_reading: str):
         super().__init__(None, deposit_queue)
-        self.file_to_read = open(path_to_file_for_reading)
+        self.file_to_read = open(path_to_file_for_reading, mode='r')
         self.name = f"Thread: {self.file_to_read.name} Phase 1"
 
     """
