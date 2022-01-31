@@ -41,7 +41,7 @@ class Phase2SRCToAST(PyperThread):
     def on_stepped(self):
         if len(self.withdrawal_queue.queue) == 0:
             if self._Last._Running:
-                print(f"Thread: {self.name} is waiting")
+                print(f"Phase 2 Thread: {self.name} is waiting")
             else:
                 self.exit_pyper_thread()
         else:

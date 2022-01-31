@@ -3,7 +3,6 @@ from abc import abstractmethod
 from queue import Queue
 from threading import Thread
 
-# using alias 'Override' just to give me some feel :)
 """
     
     Pyper Thread
@@ -26,11 +25,11 @@ class PyperThread(Thread):
         holds reference to the Node(thread) that
         comes before and after it.
 
-        Next and Last hold references to the
-        Nodes that come before and after a this node respectively.
+        fields Next and Last hold references to the
+        nodes that come before and after this node respectively.
 
         Starting and ending Node have their
-        LastNode and NextNode as None respectively.
+        LastNode and NextNode field as None respectively.
 
         This is a simple diagram showing how nodes are connected
 
@@ -48,12 +47,6 @@ class PyperThread(Thread):
         Last
         - Holds reference to the thread before it
 
-        __rshift__(other)
-        - Sets provided Node as this nodes Next Node
-
-        __lshift__(other)
-        - Sets provided Node as this nodes Last Node
-
         A side note: deposit_queue is a temp storage
         used for sharing storage between threads
 
@@ -67,9 +60,11 @@ class PyperThread(Thread):
         self._Last: PyperThread = None
         self._Running = True
 
+    # Sets provided Node as this nodes Next Node
     def connect_next(self, other):
         self._Next = other
 
+    # Sets provided Node as this nodes Last Node
     def connect_last(self, other):
         self._Last = other
 
@@ -115,19 +110,23 @@ class PyperThread(Thread):
 
     @abstractmethod
     def on_start(self):
-        pass
+        raise NotImplementedError
+
 
     @abstractmethod
     def on_stepped(self):
-        pass
+        raise NotImplementedError
+
 
     @abstractmethod
     def on_exit(self):
-        pass
+        raise NotImplementedError
+
 
     @abstractmethod
     def on_terminated(self):
-        pass
+        raise NotImplementedError
+
 
     """
     
@@ -161,6 +160,7 @@ class PyperThread(Thread):
             self.on_stepped()
 
         self.on_exit()
+
 
     """
     
@@ -212,7 +212,7 @@ class PyperThread(Thread):
         self.exit_pyper_thread()
 
         # Spawn a task to terminate other threads
-        asyncio.create_task(self._terminate_connected_threads())
+        asyncio.create_task(self._terminate_connected_threads)
 
         # allow the class to clean up
         self.on_terminated()

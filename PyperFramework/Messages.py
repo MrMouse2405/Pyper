@@ -57,10 +57,10 @@ Info   :
 '''
 
 CompilingFilesMessage = "Compiling Files..."
-CompiledFilesMessage = "Compiled Files."
+CompiledFilesMessage = "Compiled Files. Lets goooo!"
 
 CompilingDirectoryMessage = "Feature in development..."
-CompiledDirectoryMessage = "Feature in development."
+CompiledDirectoryMessage = "Feature in development..."
 
 '''
 
@@ -68,11 +68,11 @@ CompiledDirectoryMessage = "Feature in development."
 
 '''
 
-InvalidCommandError = "Invalid Command"
+InvalidCommandError = "Invalid Command. Sad :("
 
-InvalidFileTypeError = "Invalid File Type. Only Python Source Code Files are accepted"
-InvalidFilePathError = "Invalid Path to File"
+InvalidFileTypeError = "Invalid File Type. Only Python Source Code Files are accepted. Unacceptable >:("
+InvalidFilePathError = "Invalid Path to File. :/"
 NoFileProvidedError  = "No Files are provided for compilation. BAD!"
 
-InsufficientPrivilegesError = "Pyper doesn't have enough privileges to access the provided files."
+InsufficientPrivilegesError = "Pyper doesn't have enough privileges to access the provided files. Want to get me in trouble huh?"
 
