@@ -1,4 +1,4 @@
-<img align="left" width="80" height="80" src="LogoVeryImportantTrustMePlsTrustMe.png" alt="Pyper Logo">
+<img align="left" width="80" height="80" src="Logo.png" alt="Pyper Logo">
 
 # Pyper
 
@@ -18,3 +18,4 @@ Caveats:
 1. Performance: No gains, if python script just calls c-modules.
 2. Numbers: Pyper ints are just regular 64-bit floating point numbers. However, we do offer INT behaviour.
 3. Parallelism / Concurrency: Pyper is still in-development, this feature is not implemented yet.
+

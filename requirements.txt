@@ -1,0 +1,8 @@
+## The following requirements were added by pip freeze:
+click==8.1.7
+Cython==3.0.11
+lupa==2.2
+numpy==2.0.1
+setuptools==72.2.0
+tree-sitter==0.22.3
+tree-sitter-python==0.21.0

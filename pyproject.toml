@@ -1,0 +1,22 @@
+[project]
+name = "pyper-jitg"
+version = "0.0.1"
+authors = [
+  { name="MrMouse2405", email="mrmouse2405@gmail.com" },
+]
+description = "Pyper: A high performance JIT VM for Python"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/MrMouse2405/Pyper"
+Issues = "https://github.com/MrMouse2405/Pyper/issues"
+
+[build-system]
+requires = ["setuptools>=72.2.0","cython>=3.0.11","tree-sitter>=0.22.3","tree-sitter-python>=0.21.0","wheel>=0.44.0"]
+build-backend = "setuptools.build_meta"
