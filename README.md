@@ -1,4 +1,4 @@
-<img align="left" width="80" height="80" src="Logo.png" alt="Pyper Logo">
+<img align="left" width="60" height="60" src="Logo.png" alt="Pyper Logo">
 
 # Pyper
 
