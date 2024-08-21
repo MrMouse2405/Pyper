@@ -3,6 +3,7 @@ name = "pyper-jitg"
 version = "0.0.1"
 authors = [
   { name="MrMouse2405", email="mrmouse2405@gmail.com" },
+    { name="colin-mccormack", email="colin.william.mccormack@gmail.com"},
 ]
 description = "Pyper: A high performance JIT VM for Python"
 readme = "README.md"
